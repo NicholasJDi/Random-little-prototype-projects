@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5wekknjx6hdh"]
+
+[ext_resource type="Script" uid="uid://6ve3k3f1viht" path="res://project_chooser.gd" id="1_8irhi"]
+[ext_resource type="StyleBox" uid="uid://b6eu1kgjt8nc1" path="res://data/dropdown_normal.tres" id="2_giq3n"]
+[ext_resource type="StyleBox" uid="uid://b43l8c6s22brh" path="res://data/dropdown_pressed.tres" id="3_odcny"]
+[ext_resource type="StyleBox" uid="uid://c77tkvsjp1rvx" path="res://data/dropdown_hovered.tres" id="4_hrkx5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s30ck"]
+resource_local_to_scene = true
+content_margin_left = 5.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0.10666664, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.066666655, 0.1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wppch"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ychm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m7wpm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7v4r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ohxht"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ddeor"]
+
+[node name="Project Title" type="PanelContainer"]
+offset_right = 284.0
+offset_bottom = 42.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_s30ck")
+script = ExtResource("1_8irhi")
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("2_giq3n")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_wppch")
+theme_override_styles/pressed = ExtResource("3_odcny")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5ychm")
+theme_override_styles/hover = ExtResource("4_hrkx5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_m7wpm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f7v4r")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ohxht")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ddeor")
+selected = 0
+item_count = 2
+popup/item_0/text = "Home"
+popup/item_0/id = 0
+popup/item_1/text = "Song Metadata Helper"
+popup/item_1/id = 1
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

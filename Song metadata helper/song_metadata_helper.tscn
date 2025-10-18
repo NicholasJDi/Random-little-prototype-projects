@@ -1,0 +1,852 @@
+[gd_scene load_steps=62 format=3 uid="uid://dqi5yhbisksny"]
+
+[ext_resource type="Script" uid="uid://dwqtt1eyngtg6" path="res://Song metadata helper/song_metadata_helper.gd" id="1_nitco"]
+[ext_resource type="Script" uid="uid://brc1nbe3brmay" path="res://Song metadata helper/settings.gd" id="2_02hdv"]
+[ext_resource type="StyleBox" uid="uid://df5h8l7gyw0r3" path="res://data/backdrop.tres" id="2_5halt"]
+[ext_resource type="PackedScene" uid="uid://b5wekknjx6hdh" path="res://project_chooser.tscn" id="2_u6qs6"]
+[ext_resource type="StyleBox" uid="uid://qc5knhr5xf3y" path="res://data/panel.tres" id="3_0ruwj"]
+[ext_resource type="StyleBox" uid="uid://b2tyceuvoswgu" path="res://data/field_normal.tres" id="4_fql3b"]
+[ext_resource type="StyleBox" uid="uid://b4hh436hi5s42" path="res://data/field_focused.tres" id="5_u6qs6"]
+[ext_resource type="StyleBox" uid="uid://b6eu1kgjt8nc1" path="res://data/dropdown_normal.tres" id="7_0ruwj"]
+[ext_resource type="StyleBox" uid="uid://b43l8c6s22brh" path="res://data/dropdown_pressed.tres" id="8_u6qs6"]
+[ext_resource type="StyleBox" uid="uid://cqa0bu8kjf587" path="res://data/button_normal.tres" id="10_6xvgv"]
+[ext_resource type="StyleBox" uid="uid://duo2fga61lp6b" path="res://data/button_pressed.tres" id="11_hsmgk"]
+[ext_resource type="StyleBox" uid="uid://jw6d5eysv8nj" path="res://Song metadata helper/button_hover.tres" id="12_u8wsy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s30ck"]
+resource_local_to_scene = true
+content_margin_left = 5.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0.10666664, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.066666655, 0.1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqq1o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02hdv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2jy05"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wppch"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gall3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52hu2"]
+bg_color = Color(0, 0.10666664, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0, 0.06666667, 0.101960786, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xvgv"]
+bg_color = Color(0, 0.10666664, 0.16, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0, 0.078431375, 0.12156863, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47ch2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vi22k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6qs6"]
+resource_local_to_scene = true
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0, 0.10666664, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.066666655, 0.1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bs0kg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nitco"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kfuio"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_te085"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrnj0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nqqup"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l7qve"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5n7b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upthd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mcl2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2oqm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtbrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ep75"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7a5nn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwvij"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yh6ik"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fpj5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7m57"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3u155"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_of3s3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hbpg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dxm2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqg1y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgen1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k747r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfb7l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5halt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ruwj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_52hu2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xvgv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hsmgk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fql3b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u8wsy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oneix"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u6qs6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s30ck"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ychm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cc75l"]
+
+[node name="Song Metadata Helper" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_nitco")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.07800001, 0.12, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Project Title" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource("2_u6qs6")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s30ck")
+project_index = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Output" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_5halt")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eqq1o")
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="filename" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_0ruwj")
+
+[node name="container" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/filename"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/filename/container"]
+layout_mode = 2
+text = "Filename:"
+
+[node name="field" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/filename/container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_fql3b")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_02hdv")
+theme_override_styles/focus = ExtResource("5_u6qs6")
+placeholder_text = "Filename Here"
+
+[node name="title" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_0ruwj")
+
+[node name="container" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/title"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/title/container"]
+layout_mode = 2
+text = "Title:"
+
+[node name="field" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/title/container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_fql3b")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_02hdv")
+theme_override_styles/focus = ExtResource("5_u6qs6")
+placeholder_text = "Title Here"
+
+[node name="artist" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_0ruwj")
+
+[node name="container" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/artist"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/artist/container"]
+layout_mode = 2
+text = "Artist:"
+
+[node name="field" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/artist/container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_fql3b")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_02hdv")
+theme_override_styles/focus = ExtResource("5_u6qs6")
+placeholder_text = "Artist Here"
+
+[node name="album" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_0ruwj")
+
+[node name="container" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/album"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/album/container"]
+layout_mode = 2
+text = "Album:"
+
+[node name="field" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/album/container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_fql3b")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_02hdv")
+theme_override_styles/focus = ExtResource("5_u6qs6")
+placeholder_text = "Album Here"
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2jy05")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Import/Export"
+
+[node name="Import" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("10_6xvgv")
+theme_override_styles/pressed = ExtResource("11_hsmgk")
+theme_override_styles/hover = ExtResource("12_u8wsy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wppch")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gall3")
+text = "Import"
+
+[node name="CodeEdit" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_52hu2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6xvgv")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_47ch2")
+theme_override_styles/completion = SubResource("StyleBoxEmpty_vi22k")
+text = "{
+	\"types\": {
+		\"filename\": \"Normal\",
+		\"title\": \"Normal\",
+		\"artist\": \"Multiple\",
+		\"track\": \"Normal\",
+		\"album\": \"Normal\"
+	},
+	\"spaces_in_filename\": true
+}"
+highlight_all_occurrences = true
+draw_control_chars = true
+draw_tabs = true
+draw_spaces = true
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+auto_brace_completion_pairs = {
+"\"": "\"",
+"'": "'",
+"(": ")",
+"[": "]",
+"`": "`",
+"{": "}"
+}
+
+[node name="Settings" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_u6qs6")
+script = ExtResource("2_02hdv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bs0kg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nitco")
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="Preset Options" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/HBoxContainer"]
+layout_mode = 2
+text = "Preset"
+
+[node name="Preset" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("7_0ruwj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kfuio")
+theme_override_styles/pressed = ExtResource("8_u6qs6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_te085")
+theme_override_styles/hover = ExtResource("7_0ruwj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_mrnj0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nqqup")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_l7qve")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j5n7b")
+selected = 1
+item_count = 4
+popup/item_0/text = "Compact"
+popup/item_0/id = 0
+popup/item_1/text = "Normal"
+popup/item_1/id = 1
+popup/item_2/text = "Proper"
+popup/item_2/id = 2
+popup/item_3/text = "Custom"
+popup/item_3/id = 3
+
+[node name="Custom" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Filename Type"
+
+[node name="Filename Type" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("7_0ruwj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_upthd")
+theme_override_styles/pressed = ExtResource("8_u6qs6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_mcl2v")
+theme_override_styles/hover = ExtResource("7_0ruwj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_m2oqm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gtbrc")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6ep75")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7a5nn")
+selected = 1
+fit_to_longest_item = false
+item_count = 3
+popup/item_0/text = "Compact [artist1 - title]"
+popup/item_0/id = 0
+popup/item_1/text = "Normal [artist - title (with contributers)]"
+popup/item_1/id = 1
+popup/item_2/text = "Extended [artist - album - title (with contributers)]"
+popup/item_2/id = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Title Type"
+
+[node name="Title Type" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("7_0ruwj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_lwvij")
+theme_override_styles/pressed = ExtResource("8_u6qs6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yh6ik")
+theme_override_styles/hover = ExtResource("7_0ruwj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_fpj5v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g7m57")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3u155")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_of3s3")
+selected = 1
+fit_to_longest_item = false
+item_count = 3
+popup/item_0/text = "Compact [title]"
+popup/item_0/id = 0
+popup/item_1/text = "Normal [title (with contributers)]"
+popup/item_1/id = 1
+popup/item_2/text = "Extended [artist - title (with contributers)]"
+popup/item_2/id = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Artist Type"
+
+[node name="Artist Type" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("7_0ruwj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4hbpg")
+theme_override_styles/pressed = ExtResource("8_u6qs6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1dxm2")
+theme_override_styles/hover = ExtResource("7_0ruwj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_eqg1y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dgen1")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_k747r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bfb7l")
+selected = 1
+fit_to_longest_item = false
+item_count = 3
+popup/item_0/text = "Single [artist1] (other artists handled in title)"
+popup/item_0/id = 0
+popup/item_1/text = "Multiple [artist1, artist2]"
+popup/item_1/id = 1
+popup/item_2/text = "All [artist1, artist2, contributer1, contributer2]"
+popup/item_2/id = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Track Type"
+
+[node name="Track Type" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("7_0ruwj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5halt")
+theme_override_styles/pressed = ExtResource("8_u6qs6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0ruwj")
+theme_override_styles/hover = ExtResource("7_0ruwj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_52hu2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xvgv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hsmgk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fql3b")
+selected = 1
+fit_to_longest_item = false
+item_count = 3
+popup/item_0/text = "Single"
+popup/item_0/id = 0
+popup/item_1/text = "Normal"
+popup/item_1/id = 1
+popup/item_2/text = "Remix"
+popup/item_2/id = 2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "Album Type"
+
+[node name="Album Type" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("7_0ruwj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5halt")
+theme_override_styles/pressed = ExtResource("8_u6qs6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0ruwj")
+theme_override_styles/hover = ExtResource("7_0ruwj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_52hu2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xvgv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hsmgk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fql3b")
+selected = 0
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Normal"
+popup/item_0/id = 0
+popup/item_1/text = "Extended Play (EP)"
+popup/item_1/id = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Title"
+
+[node name="Title" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_fql3b")
+theme_override_styles/focus = ExtResource("5_u6qs6")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Artist"
+
+[node name="Artist" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_fql3b")
+theme_override_styles/focus = ExtResource("5_u6qs6")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Contributers"
+
+[node name="Contributers" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_fql3b")
+theme_override_styles/focus = ExtResource("5_u6qs6")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Original Artist"
+
+[node name="Original Artist" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_fql3b")
+theme_override_styles/focus = ExtResource("5_u6qs6")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "Original Contributers"
+
+[node name="Original Contributers" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_fql3b")
+theme_override_styles/focus = ExtResource("5_u6qs6")
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "Album"
+
+[node name="Album" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_fql3b")
+theme_override_styles/focus = ExtResource("5_u6qs6")
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+text = "Contributer Style"
+
+[node name="Contributer Style" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("7_0ruwj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5halt")
+theme_override_styles/pressed = ExtResource("8_u6qs6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0ruwj")
+theme_override_styles/hover = ExtResource("7_0ruwj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_52hu2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xvgv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hsmgk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fql3b")
+selected = 0
+fit_to_longest_item = false
+item_count = 5
+popup/item_0/text = "with"
+popup/item_0/id = 0
+popup/item_1/text = "ft."
+popup/item_1/id = 1
+popup/item_2/text = "feat."
+popup/item_2/id = 2
+popup/item_3/text = "x"
+popup/item_3/id = 3
+popup/item_4/text = ","
+popup/item_4/id = 4
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+text = "Put Brackets Around Contributers"
+
+[node name="Put Brackets Around Contributers" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u8wsy")
+button_pressed = true
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "Keep Spaces In Filename"
+
+[node name="Keep Spaces In Filename" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u8wsy")
+button_pressed = true
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_oneix")
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Help" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/normal = ExtResource("10_6xvgv")
+theme_override_styles/pressed = ExtResource("11_hsmgk")
+theme_override_styles/hover = ExtResource("12_u8wsy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wppch")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gall3")
+text = "?"
+
+[node name="Export" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("10_6xvgv")
+theme_override_styles/pressed = ExtResource("11_hsmgk")
+theme_override_styles/hover = ExtResource("12_u8wsy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wppch")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gall3")
+text = "Export"
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("10_6xvgv")
+theme_override_styles/pressed = ExtResource("11_hsmgk")
+theme_override_styles/hover = ExtResource("12_u8wsy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u6qs6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s30ck")
+text = "Generate Metadata"
+
+[node name="Help Menu" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_5halt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Titlebar" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer/Titlebar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Help Menu"
+
+[node name="Exit" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer/Titlebar"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("10_6xvgv")
+theme_override_styles/pressed = ExtResource("11_hsmgk")
+theme_override_styles/hover = ExtResource("12_u8wsy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5ychm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cc75l")
+text = "X"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+theme_override_font_sizes/mono_font_size = 14
+bbcode_enabled = true
+text = "[font_size=18]General:[/font_size]
+Hello And Welcome, Or Whatever Idk. This Is The Song Metadata Helper, Its Made To Help With Complicated Metadata Stuff, Some Of The Options Here Are Made For Personal Music Libraries, If Your Trying To Release Music I Recommend Using The \"Proper\" Preset. (not really required, do whatever you prerfer)
+[font_size=1]
+[/font_size][font_size=16]Filename:[/font_size]
+The Filename Should Be As Clear As Possible, And Should Explain Who Made The Track And Show Basic Information About The Track. (like the title or album)
+[font_size=1]
+[/font_size][font_size=16]Title:[/font_size]
+The Title Should Be Pretty Much Whatever You Want It To Be, But It Should Kind Of Explain The Track, For Instance If The Track Is 8Bit Or Chiptune Music A Title Like Pixelated Would Work Well.
+[font_size=1]
+[/font_size][font_size=16]Artists:[/font_size]
+The Artist Section Should Include Everyone That Directly Worked On The Song.
+[font_size=1]
+[/font_size][font_size=16]Contributers:[/font_size]
+The Contributers Section Should Include Everyone Who Helped With The Song, Like A Voice Actor. (if your not sure if someone worked directly on the song its best to place them in this section)
+[font_size=1]
+[/font_size][font_size=16]Album:[/font_size]
+The Album-name Can be Whatever You Want, If The Track Is A Single The Album Should Be The Same As The Title.
+[font_size=1]
+[/font_size][font_size=16]Extended Play (EP):[/font_size]
+The Album-name Should Be The Title Of The First Song In The EP.
+[font_size=3]
+[/font_size][font_size=18]Remix:[/font_size]
+Remixes Are Kind Of Complicated And Theres Not Really Any Established Format, But The Correct Format Is \"Proper\" Preset. (you have to re-select the option when swapping to \"Remix\" track type.)
+[font_size=1]
+[/font_size][font_size=16]Original Artists:[/font_size]
+The Original Artist Section Should Include Everyone Who Directly Worked on The Original Song.
+[font_size=1]
+[/font_size][font_size=16]Original Contributers:[/font_size]
+The Original Contributers Section Should Include Everyone Who Helped With The Original Song, Like A Voice Actor. (if your not sure if someone worked directly on the original song its best to place them in this section)"
+
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/HBoxContainer/Import" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_import_pressed"]
+[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/HBoxContainer/Preset" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_preset_item_selected"]
+[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer/HBoxContainer/Filename Type" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_filename_type_item_selected"]
+[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer/HBoxContainer2/Title Type" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_title_type_item_selected"]
+[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/Custom/VBoxContainer/HBoxContainer3/Artist Type" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_artist_type_item_selected"]
+[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/Track Type" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_track_type_item_selected"]
+[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer9/Album Type" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_album_type_item_selected"]
+[connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2/Title" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_title_text_changed"]
+[connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3/Artist" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_artist_text_changed"]
+[connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4/Contributers" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_contributers_text_changed"]
+[connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5/Original Artist" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_original_artist_text_changed"]
+[connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6/Original Contributers" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_original_contributers_text_changed"]
+[connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer7/Album" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_album_text_changed"]
+[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12/Contributer Style" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_contributer_style_item_selected"]
+[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11/Put Brackets Around Contributers" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_put_brackets_around_contributers_toggled"]
+[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer8/Keep Spaces In Filename" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_keep_spaces_in_filename_toggled"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10/Export" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_export_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer/Titlebar/Exit" to="." method="_on_exit_pressed"]

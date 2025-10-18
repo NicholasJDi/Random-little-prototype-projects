@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfb486qhjny5l"]
+
+[ext_resource type="PackedScene" uid="uid://b5wekknjx6hdh" path="res://project_chooser.tscn" id="1_1ey7h"]
+[ext_resource type="StyleBox" uid="uid://df5h8l7gyw0r3" path="res://data/backdrop.tres" id="1_tt30a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1ld7"]
+resource_local_to_scene = true
+content_margin_left = 5.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0.10666664, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.066666655, 0.1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.07800001, 0.12, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Project Title" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource("1_1ey7h")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o1ld7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Home" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_tt30a")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Home"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hey!
+
+This is a mix project where i make little prototypes that i randomly think of, or just useful tools.
+
+If you came here for a spesific project, click the dropdown title bar above."
+fit_content = true
+
+[node name="List" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_tt30a")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/List"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[font_size=22]Here's a list for you:[/font_size]
+[font_size=4]
+[/font_size][font_size=18]Song Metadata Helper:[/font_size]
+A project that helps you make metadata for song files. (filename, title, author, album)"
+fit_content = true
