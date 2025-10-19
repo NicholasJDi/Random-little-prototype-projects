@@ -16,6 +16,8 @@ class_name SongMetadataHelperSettings
 @onready var Original_Contributers: LineEdit = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6/Original Contributers"
 @onready var Album: LineEdit = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer7/Album
 
+@onready var Contributer_Style: OptionButton = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12/Contributer Style"
+@onready var Put_Brackets_Around_Contributers: CheckButton = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11/Put Brackets Around Contributers"
 @onready var Keep_Spaces_In_Filename: CheckButton = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer8/Keep Spaces In Filename"
 
 @onready var Original_Artist_box: HBoxContainer = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5"
@@ -253,6 +255,18 @@ func export() -> void:
 				if !item.is_empty():
 					array.append(item)
 			data_to_send.original_contributers = array
+	match contributer_style:
+		0:
+			data_to_send.contributer_style = "with"
+		1:
+			data_to_send.contributer_style = "ft"
+		2:
+			data_to_send.contributer_style = "feat"
+		3:
+			data_to_send.contributer_style = "x"
+		4:
+			data_to_send.contributer_style = ","
+	data_to_send.brackets_around_contributers = put_brackets_around_contributers
 	data_to_send.spaces_in_filename = keep_spaces_in_filename
 	code_edit.text = JSON.stringify(data_to_send, "\t",false)
 
@@ -376,6 +390,29 @@ func _on_import_pressed() -> void:
 		if "album" in data_received and typeof(data_received.album) == TYPE_STRING:
 			album = data_received.album.strip_edges()
 			Album.text = album
+		
+		# contributer style
+		if "contributer_style" in data_received and typeof(data_received.contributer_style) == TYPE_STRING:
+			match data_received.contributer_style:
+				"with":
+					Contributer_Style.select(0)
+					contributer_style = 0
+				"ft":
+					Contributer_Style.select(1)
+					contributer_style = 1
+				"feat":
+					Contributer_Style.select(2)
+					contributer_style = 2
+				"x":
+					Contributer_Style.select(3)
+					contributer_style = 3
+				",":
+					Contributer_Style.select(4)
+					contributer_style = 4
+		
+		# contributer brackets
+		if "brackets_around_contributers" in data_received and typeof(data_received.brackets_around_contributers) == TYPE_BOOL:
+			Put_Brackets_Around_Contributers.button_pressed = data_received.brackets_around_contributers
 		
 		# keep spaces
 		if "spaces_in_filename" in data_received and typeof(data_received.spaces_in_filename) == TYPE_BOOL:
