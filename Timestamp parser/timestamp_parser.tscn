@@ -1,0 +1,288 @@
+[gd_scene load_steps=17 format=3 uid="uid://cym2tnhmdfs13"]
+
+[ext_resource type="PackedScene" uid="uid://b5wekknjx6hdh" path="res://project_chooser.tscn" id="1_atktp"]
+[ext_resource type="Script" uid="uid://do6v25d16n26" path="res://Timestamp parser/timestamp_parser.gd" id="1_h7upe"]
+[ext_resource type="StyleBox" uid="uid://df5h8l7gyw0r3" path="res://data/backdrop.tres" id="2_t3bit"]
+[ext_resource type="StyleBox" uid="uid://b2tyceuvoswgu" path="res://data/field_normal.tres" id="3_hfc0i"]
+[ext_resource type="StyleBox" uid="uid://b4hh436hi5s42" path="res://data/field_focused.tres" id="4_y4vp3"]
+[ext_resource type="StyleBox" uid="uid://cqa0bu8kjf587" path="res://data/button_normal.tres" id="6_cw2g4"]
+[ext_resource type="StyleBox" uid="uid://duo2fga61lp6b" path="res://data/button_pressed.tres" id="7_4lfg7"]
+[ext_resource type="StyleBox" uid="uid://jw6d5eysv8nj" path="res://data/button_hover.tres" id="8_gi7ha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfc0i"]
+resource_local_to_scene = true
+content_margin_left = 5.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0.10666664, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.066666655, 0.1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_atktp"]
+bg_color = Color(0, 0.10666664, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0, 0.06666667, 0.101960786, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3bit"]
+bg_color = Color(0, 0.10666664, 0.16, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0, 0.078431375, 0.12156863, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfc0i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4vp3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_va2t7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oj846"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2dcj0"]
+
+[node name="Timestamp Parser" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h7upe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.07800001, 0.12, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Project Title" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource("1_atktp")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hfc0i")
+project_index = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSplitContainer" type="VSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offset = -64
+
+[node name="Output" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_t3bit")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer/Output"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer/Output/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Output"
+
+[node name="CodeEdit" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer/Output/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_atktp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_t3bit")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_hfc0i")
+theme_override_styles/completion = SubResource("StyleBoxEmpty_y4vp3")
+highlight_all_occurrences = true
+draw_control_chars = true
+draw_tabs = true
+draw_spaces = true
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+auto_brace_completion_pairs = {
+"\"": "\"",
+"'": "'",
+"(": ")",
+"[": "]",
+"`": "`",
+"{": "}"
+}
+
+[node name="Input" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_t3bit")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer/Input"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Input"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Position"
+
+[node name="Position" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("3_hfc0i")
+theme_override_styles/focus = ExtResource("4_y4vp3")
+
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+layout_mode = 2
+text = "List:"
+
+[node name="CodeEdit" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_atktp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_t3bit")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_hfc0i")
+theme_override_styles/completion = SubResource("StyleBoxEmpty_y4vp3")
+highlight_all_occurrences = true
+draw_control_chars = true
+draw_tabs = true
+draw_spaces = true
+delimiter_strings = Array[String](["\" \"", "' '"])
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+auto_brace_completion_pairs = {
+"\"": "\"",
+"'": "'",
+"(": ")",
+"[": "]",
+"`": "`",
+"{": "}"
+}
+
+[node name="Settings" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_t3bit")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer"]
+layout_mode = 2
+text = "Note: Timestamp Open must also be at the start of the line."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Timestamp Open"
+
+[node name="Timestamp Open" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("3_hfc0i")
+theme_override_styles/focus = ExtResource("4_y4vp3")
+text = "["
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Timestamp Close"
+
+[node name="Timestamp Close" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("3_hfc0i")
+theme_override_styles/focus = ExtResource("4_y4vp3")
+text = "]: "
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Grab Neighboring Timestamps"
+
+[node name="Grab Neighboring Timestamps" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_va2t7")
+button_pressed = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Break If Invalid Characters In Timestamp"
+
+[node name="Break If Invalid Characters In Timestamp" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_va2t7")
+button_pressed = true
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("6_cw2g4")
+theme_override_styles/pressed = ExtResource("7_4lfg7")
+theme_override_styles/hover = ExtResource("8_gi7ha")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_oj846")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2dcj0")
+text = "Parse Timestamps"
+
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/HSplitContainer/Settings/VBoxContainer/Button" to="." method="_on_button_pressed"]

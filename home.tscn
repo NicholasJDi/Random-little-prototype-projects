@@ -45,7 +45,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 7
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
@@ -95,5 +95,8 @@ bbcode_enabled = true
 text = "[font_size=22]Here's a list for you:[/font_size]
 [font_size=4]
 [/font_size][font_size=18]Song Metadata Helper:[/font_size]
-A project that helps you make metadata for song files. (filename, title, author, album)"
+A project that helps you make metadata for song files. (filename, title, author, album
+[font_size=4]
+[/font_size][font_size=18]Timestamp Parser:[/font_size]
+Parse Timestamp Lists really easily and configurably."
 fit_content = true

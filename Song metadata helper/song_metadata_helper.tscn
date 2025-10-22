@@ -11,7 +11,7 @@
 [ext_resource type="StyleBox" uid="uid://b43l8c6s22brh" path="res://data/dropdown_pressed.tres" id="8_u6qs6"]
 [ext_resource type="StyleBox" uid="uid://cqa0bu8kjf587" path="res://data/button_normal.tres" id="10_6xvgv"]
 [ext_resource type="StyleBox" uid="uid://duo2fga61lp6b" path="res://data/button_pressed.tres" id="11_hsmgk"]
-[ext_resource type="StyleBox" uid="uid://jw6d5eysv8nj" path="res://Song metadata helper/button_hover.tres" id="12_u8wsy"]
+[ext_resource type="StyleBox" uid="uid://jw6d5eysv8nj" path="res://data/button_hover.tres" id="12_u8wsy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s30ck"]
 resource_local_to_scene = true
