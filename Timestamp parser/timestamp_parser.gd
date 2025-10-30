@@ -42,8 +42,9 @@ func parse_timestamp_list(timestamp_list : String, current_time_seconds : float,
 	else:
 		data_to_return.current = [dict[base],base]
 	if include_next_last: # next/last processing
-		var last = keyarray.find(base) -1
-		var next = keyarray.find(base) + 1
+		var baseid = keyarray.find(base)
+		var last = baseid - 1
+		var next = baseid + 1
 		if last <= -1:
 			data_to_return.last = ["NULL",-INF]
 		else:
@@ -57,8 +58,9 @@ func parse_timestamp_list(timestamp_list : String, current_time_seconds : float,
 func convert_from_timestamp(timestamp : String, break_on_invalid_character : bool = false) -> float:
 	var timestampout = ""
 	var valid = false
+	var characters = "1234567890".split()
 	for character in timestamp:
-		if "1234567890".split().has(character):
+		if characters.has(character):
 			timestampout += character
 			valid = true
 		elif character == ":" or character == ".":
