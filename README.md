@@ -4,5 +4,8 @@
 ## Project List
 ### Song Metadata Helper:
 A project that helps you make metadata for song files. (filename, title, author, album)
+### Timestamp Parser
+Parse Timestamp Lists really easily and configurably.
 
+## Take A Look At A Built Version Here:
 https://nicholasjdi.github.io/projects/web/random_little_prototype_projects
