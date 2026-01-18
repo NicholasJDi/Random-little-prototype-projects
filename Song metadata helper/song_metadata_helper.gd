@@ -45,7 +45,7 @@ func format() -> void:
 	# album
 	var tempalbum = Settings.album.strip_edges()
 	match Settings.track_type:
-		0: if Settings.album_typ == 0:
+		0: if Settings.album_type == 0:
 			tempalbum = Settings.title.strip_edges()
 		else: tempalbum = "Single"
 		1: if Settings.album_type == 1:
@@ -61,7 +61,7 @@ func format() -> void:
 			else: tempfilename = Settings.artist.split(",")[0].strip_edges() + " - " + Settings.title.strip_edges()
 		1: # Normal
 			if Settings.track_type == 2:
-				tempfilename = combine_with_modifier(Settings.original_artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " [" + combine_with_modifier(Settings.artist.split(","),Settings.put_brackets_around_contributers,"x") + " " + ("Remix " + combine_with_modifier(Settings.contributers.split(","),modifier)).strip_edges() + "]"
+				tempfilename = combine_with_modifier(Settings.original_artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " [" + combine_with_modifier(Settings.artist.split(","),false,"x") + " " + ("Remix " + combine_with_modifier(Settings.contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges() + "]"
 			else: tempfilename = (combine_with_modifier(Settings.artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " " + combine_with_modifier(Settings.contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges()
 		2: # Extended
 			if Settings.track_type == 2:
@@ -96,7 +96,7 @@ func format() -> void:
 			array.append_array(Settings.contributers.split(","))
 	artist_text = combine_with_modifier(array,false,",")
 	if not Settings.keep_spaces_in_filename:
-		tempfilename = tempfilename.replace(" - ","--").replace(" x ","_x_")
+		tempfilename = tempfilename.replace(" - ","--").replace(" x ","_x_").replace(" ","_")
 	filename_text = tempfilename
 	set_field_values()
 
