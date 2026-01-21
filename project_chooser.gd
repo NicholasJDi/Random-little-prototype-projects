@@ -23,3 +23,5 @@ func _on_option_button_item_selected(index: int) -> void:
 			get_tree().change_scene_to_file("res://Song metadata helper/song_metadata_helper.tscn")
 		2:
 			get_tree().change_scene_to_file("res://Timestamp parser/timestamp_parser.tscn")
+		3:
+			get_tree().change_scene_to_file("res://Search engine/search_engine.tscn")

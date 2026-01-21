@@ -420,7 +420,7 @@ func _on_import_pressed() -> void:
 		
 		check_preset()
 	else:
-		label.text = "Error: at line " + str(json.get_error_line() + 1)
+		label.text = "Error: at line " + str(json.get_error_line() + 1) + " (" + json.get_error_message() + ")"
 		await get_tree().create_timer(1).timeout
 		label.text = "Import/Export"
 

@@ -1,0 +1,682 @@
+[gd_scene load_steps=34 format=3 uid="uid://bpcgp3cyinnbj"]
+
+[ext_resource type="Script" uid="uid://bf1cq0lrk7p8h" path="res://Search engine/search_engine.gd" id="1_6adi4"]
+[ext_resource type="PackedScene" uid="uid://b5wekknjx6hdh" path="res://project_chooser.tscn" id="1_i4nkm"]
+[ext_resource type="StyleBox" uid="uid://df5h8l7gyw0r3" path="res://data/backdrop.tres" id="2_l1vfy"]
+[ext_resource type="StyleBox" uid="uid://b2tyceuvoswgu" path="res://data/field_normal.tres" id="3_arq1a"]
+[ext_resource type="StyleBox" uid="uid://b4hh436hi5s42" path="res://data/field_focused.tres" id="4_6adi4"]
+[ext_resource type="StyleBox" uid="uid://cqa0bu8kjf587" path="res://data/button_normal.tres" id="5_6dtj7"]
+[ext_resource type="StyleBox" uid="uid://duo2fga61lp6b" path="res://data/button_pressed.tres" id="6_e4btp"]
+[ext_resource type="StyleBox" uid="uid://jw6d5eysv8nj" path="res://data/button_hover.tres" id="7_cm3ac"]
+[ext_resource type="StyleBox" uid="uid://b6eu1kgjt8nc1" path="res://data/dropdown_normal.tres" id="10_cm3ac"]
+[ext_resource type="StyleBox" uid="uid://b43l8c6s22brh" path="res://data/dropdown_pressed.tres" id="11_me0ol"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7hvw"]
+resource_local_to_scene = true
+content_margin_left = 5.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0.10666664, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.066666655, 0.1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ooru7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1vfy"]
+bg_color = Color(0, 0.10666664, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0, 0.06666667, 0.101960786, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arq1a"]
+bg_color = Color(0, 0.10666664, 0.16, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0, 0.078431375, 0.12156863, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6adi4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dtj7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4btp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm3ac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_me0ol"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7hvw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2yeg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vfok7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p86nh"]
+resource_local_to_scene = true
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0, 0.10666664, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.066666655, 0.1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wv08p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mwrdd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fptsi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6kvsw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6jyyh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wqrrm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axfig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2m6hl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoifj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j0p55"]
+
+[node name="Search Engine" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6adi4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.07800001, 0.12, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Project Title" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource("1_i4nkm")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e7hvw")
+project_index = 3
+
+[node name="VSplitContainer" type="VSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Output" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_l1vfy")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ooru7")
+horizontal_scroll_mode = 0
+
+[node name="VSplitContainer" type="VSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offset = -64
+
+[node name="Output" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_l1vfy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Output"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Output/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Output"
+
+[node name="Output" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Output/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_l1vfy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_arq1a")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_6adi4")
+theme_override_styles/completion = SubResource("StyleBoxEmpty_6dtj7")
+text = "[
+	{
+		\"title\": \"single title\",
+		\"artists\": [
+			\"artist1\"
+		],
+		\"type\": \"single\",
+		\"date\": \"2025-03-14\"
+	},
+	{
+		\"title\": \"album title\",
+		\"album\": \"this be an album\",
+		\"artists\": [
+			\"artist1\"
+		],
+		\"contributers\": [
+			\"contri1\",
+			\"contri2\"
+		],
+		\"type\": \"album\",
+		\"date\": \"2024-07-16\"
+	},
+	{
+		\"title\": \"ep title\",
+		\"album\": \"this be an ep\",
+		\"artists\": [
+			\"artist1\",
+			\"artist2\"
+		],
+		\"type\": \"ep\",
+		\"date\": \"2025-11-07\"
+	},
+	{
+		\"title\": \"remix title\",
+		\"artists\": [
+			\"artist1\"
+		],
+		\"contributers\": [
+			\"contri1\"
+		],
+		\"original_artists\": [
+			\"oriartist1\"
+		],
+		\"type\": \"remix\",
+		\"date\": \"2024-01-27\"
+	}
+]"
+highlight_all_occurrences = true
+draw_control_chars = true
+draw_tabs = true
+draw_spaces = true
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+auto_brace_completion_pairs = {
+"\"": "\"",
+"'": "'",
+"(": ")",
+"[": "]",
+"`": "`",
+"{": "}"
+}
+
+[node name="Input" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_l1vfy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Input"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Search"
+
+[node name="Search" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("3_arq1a")
+theme_override_styles/focus = ExtResource("4_6adi4")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Sort"
+
+[node name="Sort Type" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("10_cm3ac")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_e4btp")
+theme_override_styles/pressed = ExtResource("11_me0ol")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_cm3ac")
+theme_override_styles/hover = ExtResource("10_cm3ac")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_me0ol")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e7hvw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_o2yeg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vfok7")
+selected = 0
+fit_to_longest_item = false
+item_count = 1
+popup/item_0/text = "None (Search Only)"
+popup/item_0/id = 0
+
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+layout_mode = 2
+text = "Data:"
+
+[node name="Data" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_l1vfy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_arq1a")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_6adi4")
+theme_override_styles/completion = SubResource("StyleBoxEmpty_6dtj7")
+text = "[
+	{
+		\"title\":\"single title\",
+		\"artists\":[\"artist1\"],
+		\"type\":\"single\",
+		\"date\":\"2025-03-14\"
+	},
+	{
+		\"title\":\"album title\",
+		\"album\":\"this be an album\",
+		\"artists\":[\"artist1\"],
+		\"contributers\":[\"contri1\",\"contri2\"],
+		\"type\":\"album\",
+		\"date\":\"2024-07-16\"
+	},
+	{
+		\"title\":\"ep title\",
+		\"album\":\"this be an ep\",
+		\"artists\":[\"artist1\",\"artist2\"],
+		\"type\":\"ep\",
+		\"date\":\"2025-11-07\"
+	},
+	{
+		\"title\":\"remix title\",
+		\"artists\":[\"artist1\"],
+		\"contributers\":[\"contri1\"],
+		\"original_artists\":[\"oriartist1\"],
+		\"type\":\"remix\",
+		\"date\":\"2024-01-27\"
+	},
+	{
+		\"title\":\"ep title but older\",
+		\"album\":\"this be an ep\",
+		\"artists\":[\"artist1\"],
+		\"type\":\"ep\",
+		\"date\":\"2023-6-14\"
+	}
+]"
+highlight_all_occurrences = true
+draw_control_chars = true
+draw_tabs = true
+draw_spaces = true
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+auto_brace_completion_pairs = {
+"\"": "\"",
+"'": "'",
+"(": ")",
+"[": "]",
+"`": "`",
+"{": "}"
+}
+
+[node name="Settings" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_p86nh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wv08p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mwrdd")
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sort Scheme:"
+
+[node name="Sort Scheme" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_l1vfy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_arq1a")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_6adi4")
+theme_override_styles/completion = SubResource("StyleBoxEmpty_6dtj7")
+text = "{
+	\"default\":\"album\",
+	\"title\":{
+		\"title\":{
+			\"type\":\"sort\"
+		}
+	},
+	\"title_reversed\":{
+		\"title\":{
+			\"type\":\"sort\",
+			\"reverse\":true
+		}
+	},
+	\"album\":{
+		\"date\":{
+			\"type\":\"sort\"
+		},
+		\"album\":{
+			\"type\":\"group\",
+			\"reverse\":true,
+			\"reverse_after\":true
+		}
+	},
+	\"album_reversed\":{
+		\"date\":{
+			\"type\":\"sort\"
+		},
+		\"album\":{
+			\"type\":\"group\"
+		}
+	},
+	\"date\":{
+		\"date\":{
+			\"type\":\"sort\",
+			\"reverse\":true
+		}
+	},
+	\"date_reversed\":{
+		\"date\":{
+			\"type\":\"sort\",
+		}
+	},
+	\"type\":{
+		\"type\":{
+			\"type\":\"order\",
+			\"order\":[
+				\"single\",
+				\"album\",
+				\"ep\",
+				\"remix\",
+			]
+		},
+		\"title\":{
+			\"type\":\"sort\"
+		}
+	},
+	\"type_reversed\":{
+		\"type\":{
+			\"type\":\"order\",
+			\"order\":[
+				\"single\",
+				\"album\",
+				\"ep\",
+				\"remix\",
+			],
+			\"reverse\":true
+		},
+		\"title\":{
+			\"type\":\"sort\"
+		}
+	}
+}"
+highlight_all_occurrences = true
+draw_control_chars = true
+draw_tabs = true
+draw_spaces = true
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+auto_brace_completion_pairs = {
+"\"": "\"",
+"'": "'",
+"(": ")",
+"[": "]",
+"`": "`",
+"{": "}"
+}
+
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Search Scheme:"
+
+[node name="Search Scheme" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_l1vfy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_arq1a")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_6adi4")
+theme_override_styles/completion = SubResource("StyleBoxEmpty_6dtj7")
+text = "{
+	\"title\":{
+		\"type\":\"contains\",
+		\"weight\":3,
+		\"token_weight\":0.5
+	},
+	\"album\":{
+		\"type\":\"contains\",
+		\"weight\":2,
+		\"token_weight\":0.3
+	},
+	\"artists\":{
+		\"type\":\"contains\",
+		\"weight\":0,
+		\"token_weight\":4
+	},
+	\"contributers\":{
+		\"type\":\"contains\",
+		\"weight\":0,
+		\"token_weight\":3
+	},
+	\"original_artists\":{
+		\"type\":\"contains\",
+		\"weight\":0,
+		\"token_weight\":4
+	},
+	\"original_contributers\":{
+		\"type\":\"contains\",
+		\"weight\":0,
+		\"token_weight\":3
+	},
+	\"type\":{
+		\"type\":\"exact\",
+		\"weight\":4,
+		\"position_weight\":1
+	},
+	\"date\":{
+		\"type\":\"range\"
+	}
+}"
+highlight_all_occurrences = true
+draw_control_chars = true
+draw_tabs = true
+draw_spaces = true
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+auto_brace_completion_pairs = {
+"\"": "\"",
+"'": "'",
+"(": ")",
+"[": "]",
+"`": "`",
+"{": "}"
+}
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Help" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/normal = ExtResource("5_6dtj7")
+theme_override_styles/pressed = ExtResource("6_e4btp")
+theme_override_styles/hover = ExtResource("7_cm3ac")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fptsi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6kvsw")
+text = "?"
+
+[node name="Update UI" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(90, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("5_6dtj7")
+theme_override_styles/pressed = ExtResource("6_e4btp")
+theme_override_styles/hover = ExtResource("7_cm3ac")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6jyyh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wqrrm")
+text = "Update UI"
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("5_6dtj7")
+theme_override_styles/pressed = ExtResource("6_e4btp")
+theme_override_styles/hover = ExtResource("7_cm3ac")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_axfig")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2m6hl")
+text = "Generate Metadata"
+
+[node name="Help Menu" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_l1vfy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Titlebar" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer/Titlebar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Help Menu"
+
+[node name="Exit" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer/Titlebar"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("5_6dtj7")
+theme_override_styles/pressed = ExtResource("6_e4btp")
+theme_override_styles/hover = ExtResource("7_cm3ac")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hoifj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j0p55")
+text = "X"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+theme_override_font_sizes/mono_font_size = 14
+bbcode_enabled = true
+text = "[font_size=18]General:[/font_size]
+Hello And Welcome, Or Whatever Idk. This Is The Song Metadata Helper, Its Made To Help With Complicated Metadata Stuff, Some Of The Options Here Are Made For Personal Music Libraries, If Your Trying To Release Music I Recommend Using The \"Proper\" Preset. (not really required, do whatever you prerfer)
+[font_size=1]
+[/font_size][font_size=16]Filename:[/font_size]
+The Filename Should Be As Clear As Possible, And Should Explain Who Made The Track And Show Basic Information About The Track. (like the title or album)
+[font_size=1]
+[/font_size][font_size=16]Title:[/font_size]
+The Title Should Be Pretty Much Whatever You Want It To Be, But It Should Kind Of Explain The Track, For Instance If The Track Is 8Bit Or Chiptune Music A Title Like Pixelated Would Work Well.
+[font_size=1]
+[/font_size][font_size=16]Artists:[/font_size]
+The Artist Section Should Include Everyone That Directly Worked On The Song.
+[font_size=1]
+[/font_size][font_size=16]Contributers:[/font_size]
+The Contributers Section Should Include Everyone Who Helped With The Song, Like A Voice Actor. (if your not sure if someone worked directly on the song its best to place them in this section)
+[font_size=1]
+[/font_size][font_size=16]Album:[/font_size]
+The Album-name Can be Whatever You Want, If The Track Is A Single The Album Should Be The Same As The Title.
+[font_size=1]
+[/font_size][font_size=16]Extended Play (EP):[/font_size]
+The Album-name Should Be The Title Of The First Song In The EP.
+[font_size=3]
+[/font_size][font_size=18]Remix:[/font_size]
+Remixes Are Kind Of Complicated And Theres Not Really Any Established Format, But The Correct Format Is \"Proper\" Preset. (you have to re-select the option when swapping to \"Remix\" track type.)
+[font_size=1]
+[/font_size][font_size=16]Original Artists:[/font_size]
+The Original Artist Section Should Include Everyone Who Directly Worked on The Original Song.
+[font_size=1]
+[/font_size][font_size=16]Original Contributers:[/font_size]
+The Original Contributers Section Should Include Everyone Who Helped With The Original Song, Like A Voice Actor. (if your not sure if someone worked directly on the original song its best to place them in this section)"
+
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10/Update UI" to="." method="_on_update_ui_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer/Titlebar/Exit" to="." method="_on_exit_pressed"]

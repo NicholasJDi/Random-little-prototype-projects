@@ -342,6 +342,8 @@ text = "{
 		\"track\": \"Normal\",
 		\"album\": \"Normal\"
 	},
+	\"contributer_style\": \"with\",
+	\"brackets_around_contributers\": true,
 	\"spaces_in_filename\": true
 }"
 highlight_all_occurrences = true
