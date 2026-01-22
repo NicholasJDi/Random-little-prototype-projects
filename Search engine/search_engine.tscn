@@ -606,7 +606,7 @@ theme_override_styles/pressed = ExtResource("6_e4btp")
 theme_override_styles/hover = ExtResource("7_cm3ac")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_axfig")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2m6hl")
-text = "Generate Metadata"
+text = "Search And Sort"
 
 [node name="Help Menu" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer"]
 visible = false
@@ -646,35 +646,43 @@ theme_override_font_sizes/bold_italics_font_size = 14
 theme_override_font_sizes/italics_font_size = 14
 theme_override_font_sizes/mono_font_size = 14
 bbcode_enabled = true
-text = "[font_size=18]General:[/font_size]
-Hello And Welcome, Or Whatever Idk. This Is The Song Metadata Helper, Its Made To Help With Complicated Metadata Stuff, Some Of The Options Here Are Made For Personal Music Libraries, If Your Trying To Release Music I Recommend Using The \"Proper\" Preset. (not really required, do whatever you prerfer)
-[font_size=1]
-[/font_size][font_size=16]Filename:[/font_size]
-The Filename Should Be As Clear As Possible, And Should Explain Who Made The Track And Show Basic Information About The Track. (like the title or album)
-[font_size=1]
-[/font_size][font_size=16]Title:[/font_size]
-The Title Should Be Pretty Much Whatever You Want It To Be, But It Should Kind Of Explain The Track, For Instance If The Track Is 8Bit Or Chiptune Music A Title Like Pixelated Would Work Well.
-[font_size=1]
-[/font_size][font_size=16]Artists:[/font_size]
-The Artist Section Should Include Everyone That Directly Worked On The Song.
-[font_size=1]
-[/font_size][font_size=16]Contributers:[/font_size]
-The Contributers Section Should Include Everyone Who Helped With The Song, Like A Voice Actor. (if your not sure if someone worked directly on the song its best to place them in this section)
-[font_size=1]
-[/font_size][font_size=16]Album:[/font_size]
-The Album-name Can be Whatever You Want, If The Track Is A Single The Album Should Be The Same As The Title.
-[font_size=1]
-[/font_size][font_size=16]Extended Play (EP):[/font_size]
-The Album-name Should Be The Title Of The First Song In The EP.
-[font_size=3]
-[/font_size][font_size=18]Remix:[/font_size]
-Remixes Are Kind Of Complicated And Theres Not Really Any Established Format, But The Correct Format Is \"Proper\" Preset. (you have to re-select the option when swapping to \"Remix\" track type.)
-[font_size=1]
-[/font_size][font_size=16]Original Artists:[/font_size]
-The Original Artist Section Should Include Everyone Who Directly Worked on The Original Song.
-[font_size=1]
-[/font_size][font_size=16]Original Contributers:[/font_size]
-The Original Contributers Section Should Include Everyone Who Helped With The Original Song, Like A Voice Actor. (if your not sure if someone worked directly on the original song its best to place them in this section)"
+text = "Note: This documentation will be messy.
+[font_size=18]Data:[/font_size]
+Data is simple, its an array of dicts with values in them that can either be used externally or used for searching/sorting.
+[font_size=18]Search Scheme:[/font_size]
+The way search behaves, this makes use of tokens and weight (tokens are just the input string split by spaces)
+[code]{
+	\"data_key\":{
+		\"type\":<contains/exact (see below)>,
+		\"weight\":3
+		\"token_weight\":0.5
+		\"position_weight\":1
+	}
+}[/code]
+[font_size=16]Types[/font_size]
+\"contains\": checks if any of the input tokens are within any of the value tokens
+\"exact\": checks if any of the input tokens exactly match any of the value tokens
+\"range\": this is unfinished and idk why it exists (supposed to handle dates but it don't have code)
+[font_size=16]Weights[/font_size]
+\"weight\": this weight is added the first time a token matches
+\"token_weight\": this weight is added per token match
+\"position_weight\": this weight is multiplied by how far to the left this token match is in the input string (this[5x] is[4x] how[3x] it[2x] works[1x])
+[font_size=18]Sort Scheme:[/font_size]
+(you have to press 'Update UI' to access sorting in the sort dropdown)
+Sorting uses groups, each sort rule pass will only effect data in each group, not across groups. (excluding \"group\")
+[code]{
+	\"sort_mode\":{
+		\"data_key\":{
+				\"type\":<sort/order/group (see below)>
+			}
+	}
+}[/code]
+[font_size=16]Types[/font_size]
+\"sort\": Re-orders data in each group from a to z use \"reverse\":true to sort from z to a
+\"order\": Split current groups into groups in order of data values defined in \"order\":[\"data to check for\",\"data that's below it\"] use \"reverse\":true to reverse the order, data values that are not in the list are always at the bottom no matter what.
+\"group\": Merges data with the same data value into new groups keeping order, user \"reverse\":true to reverse the newly created groups only.
+[font_size=16]Extra[/font_size]
+Use \"reverse_after\":true to reverse all data after the rule gets applied"
 
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10/Update UI" to="." method="_on_update_ui_pressed"]

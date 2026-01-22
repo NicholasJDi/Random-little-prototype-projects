@@ -82,15 +82,9 @@ func sort_data_by_search(data : Array, search_scheme : Dictionary, input_text : 
 						value = " ".join(value)
 					value = value.to_lower().split(" ",false)
 					var success = false
-					var token_weight = 0
-					if search_item.has("token_weight"):
-						token_weight = float(search_item.token_weight)
-					var weight = 1
-					if search_item.has("weight"):
-						weight = float(search_item.weight)
-					var position_weight = 0
-					if search_item.has("position_weight"):
-						position_weight = float(search_item.position_weight)
+					var weight = float(search_item.get("weight",1))
+					var token_weight = float(search_item.get("token_weight",0))
+					var position_weight = float(search_item.get("position_weight",0))
 					var total_weight = 0
 					match search_item.type:
 						"contains":
@@ -121,9 +115,10 @@ func sort_data_by_search(data : Array, search_scheme : Dictionary, input_text : 
 		sort_array.sort()
 		sort_array.reverse()
 		for item in sort_array:
-			outData.append(data[item[1]])
+			var out = data[item[1]]
 			if include_weight:
-				outData.back().weight = item[0]
+				out.weight = item[0]
+			outData.append(out)
 		return outData
 
 func sort_data_by_scheme_mode(data : Array, sort_scheme : Dictionary, sort_mode : String = "default") -> Array:
@@ -145,7 +140,7 @@ func sort_data(data : Array, sort_mode : Dictionary) -> Array:
 				"sort":
 					var g = group.duplicate()
 					g.sort_custom(func(a, b):
-						if rule.get("reverse", false):
+						if bool(rule.get("reverse", false)):
 							return a.get(rule_key) > b.get(rule_key)
 						else:
 							return a.get(rule_key) < b.get(rule_key)
@@ -153,11 +148,14 @@ func sort_data(data : Array, sort_mode : Dictionary) -> Array:
 					new_groups.append(g)
 				"order":
 					var buckets = {}
-					for bucket in rule.order:
+					var order = rule.order
+					if bool(rule.get("reverse", false)):
+						order.reverse()
+					for bucket in order:
 						buckets[bucket] = []
 					buckets[null] = []
 					for item in group:
-						var key = item.get(rule_key,null)
+						var key = item.get(rule_key)
 						if buckets.has(key):
 							buckets[key].append(item)
 						else:
@@ -191,19 +189,22 @@ func sort_data(data : Array, sort_mode : Dictionary) -> Array:
 							g.append(item)
 						new_groups.append(g)
 						i += 1
-		if rule.type == "group" and rule.get("reverse",false):
-			for item in group_map:
+		if rule.type == "group" and bool(rule.get("reverse",false)):
+			for item in group_map.keys():
 				new_groups[group_map[item]].reverse()
-		if rule.get("reverse_after",false):
+		if bool(rule.get("reverse_after",false)):
 			new_groups.reverse()
 		groups = new_groups
 	return flatten(groups)
 
-func flatten(array: Array) -> Array:
+func flatten(array: Array, depth : int = -1) -> Array:
 	var out = []
 	for item in array:
 		if typeof(item) == TYPE_ARRAY:
-			out += flatten(item)
+			if depth > 0:
+				out += flatten(item, depth - 1)
+			if depth == -1:
+				out += flatten(item)
 		else:
 			out.append(item)
 	return out
