@@ -95,8 +95,11 @@ bbcode_enabled = true
 text = "[font_size=22]Here's a list for you:[/font_size]
 [font_size=4]
 [/font_size][font_size=18]Song Metadata Helper:[/font_size]
-A project that helps you make metadata for song files. (filename, title, author, album
+A project that helps you make metadata for song files. (filename, title, author, album)
 [font_size=4]
 [/font_size][font_size=18]Timestamp Parser:[/font_size]
-Parse Timestamp Lists really easily and configurably."
+Parse Timestamp Lists really easily and configurably.
+[font_size=4]
+[/font_size][font_size=18]Search Engine:[/font_size]
+A rather simple search engine with fully configurable searching and sorting."
 fit_content = true
