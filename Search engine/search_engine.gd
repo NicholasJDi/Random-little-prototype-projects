@@ -101,7 +101,16 @@ func sort_data_by_search(data : Array, search_scheme : Dictionary, input_text : 
 									total_weight += token_weight
 									total_weight += position_weight * (input_tokens.size() - input_tokens.find(token))
 						"range":
-							pass # to do
+							for token : String in input_tokens:
+								var parts = token.split("|")
+								if parts.size() == 2:
+									if parts[0] > parts[1]:
+										parts.reverse()
+									for search_token in value:
+										if parts[0] <= search_token and search_token <= parts[1]:
+											success = true
+											total_weight += token_weight
+											total_weight += position_weight * (input_tokens.size() - input_tokens.find(token))
 					if success:
 						total_weight += weight
 					index[i] += total_weight

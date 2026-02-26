@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bpcgp3cyinnbj"]
+[gd_scene format=3 uid="uid://bpcgp3cyinnbj"]
 
 [ext_resource type="Script" uid="uid://bf1cq0lrk7p8h" path="res://Search engine/search_engine.gd" id="1_6adi4"]
 [ext_resource type="PackedScene" uid="uid://b5wekknjx6hdh" path="res://project_chooser.tscn" id="1_i4nkm"]
@@ -11,7 +11,7 @@
 [ext_resource type="StyleBox" uid="uid://b6eu1kgjt8nc1" path="res://data/dropdown_normal.tres" id="10_cm3ac"]
 [ext_resource type="StyleBox" uid="uid://b43l8c6s22brh" path="res://data/dropdown_pressed.tres" id="11_me0ol"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7hvw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6adi4"]
 resource_local_to_scene = true
 content_margin_left = 5.0
 content_margin_top = 3.0
@@ -108,7 +108,7 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j0p55"]
 
-[node name="Search Engine" type="Control"]
+[node name="Search Engine" type="Control" unique_id=72956029]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,7 +117,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6adi4")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=8223055]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -126,7 +126,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.07800001, 0.12, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=893699694]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,54 +138,55 @@ theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=676349459]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="Project Title" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource("1_i4nkm")]
+[node name="Project Title" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1918309536 instance=ExtResource("1_i4nkm")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_e7hvw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_6adi4")
 project_index = 3
 
-[node name="VSplitContainer" type="VSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=302873260]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HSplitContainer" type="HSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer" unique_id=184707102]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Output" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer"]
+[node name="Output" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer" unique_id=158234722]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("2_l1vfy")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output" unique_id=786141729]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ooru7")
 horizontal_scroll_mode = 0
 
-[node name="VSplitContainer" type="VSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer" unique_id=1609964670]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+split_offsets = PackedInt32Array(-64)
 split_offset = -64
 
-[node name="Output" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer"]
+[node name="Output" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer" unique_id=52991294]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_l1vfy")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Output"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Output" unique_id=2064404595]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Output/VBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Output/VBoxContainer" unique_id=1796070858]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Output"
 
-[node name="Output" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Output/VBoxContainer"]
+[node name="Output" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Output/VBoxContainer" unique_id=141054151]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
@@ -256,41 +257,41 @@ auto_brace_completion_pairs = {
 "{": "}"
 }
 
-[node name="Input" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer"]
+[node name="Input" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer" unique_id=1493350035]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_l1vfy")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input" unique_id=1322218772]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer" unique_id=742064816]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Input"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer" unique_id=1116028092]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer" unique_id=1821964983]
 layout_mode = 2
 text = "Search"
 
-[node name="Search" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer"]
+[node name="Search" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer" unique_id=1625758222]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("3_arq1a")
 theme_override_styles/focus = ExtResource("4_6adi4")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer" unique_id=310274066]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer2" unique_id=1009095914]
 layout_mode = 2
 text = "Sort"
 
-[node name="Sort Type" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer2"]
+[node name="Sort Type" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer/HBoxContainer2" unique_id=1918260582]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("10_cm3ac")
@@ -308,11 +309,11 @@ item_count = 1
 popup/item_0/text = "None (Search Only)"
 popup/item_0/id = 0
 
-[node name="Label2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer" unique_id=1412756515]
 layout_mode = 2
 text = "Data:"
 
-[node name="Data" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer"]
+[node name="Data" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VSplitContainer/Input/VBoxContainer" unique_id=1002161982]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
@@ -355,7 +356,7 @@ text = "[
 		\"album\":\"this be an ep\",
 		\"artists\":[\"artist1\"],
 		\"type\":\"ep\",
-		\"date\":\"2023-6-14\"
+		\"date\":\"2023-06-14\"
 	}
 ]"
 highlight_all_occurrences = true
@@ -374,22 +375,22 @@ auto_brace_completion_pairs = {
 "{": "}"
 }
 
-[node name="Settings" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer"]
+[node name="Settings" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer" unique_id=1637672279]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_p86nh")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" unique_id=574987003]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer" unique_id=256159747]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_wv08p")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mwrdd")
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer" unique_id=1850459787]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -398,17 +399,17 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer" unique_id=1095743464]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1108503652]
 layout_mode = 2
 text = "Sort Scheme:"
 
-[node name="Sort Scheme" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Sort Scheme" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1085374092]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
@@ -504,11 +505,11 @@ auto_brace_completion_pairs = {
 "{": "}"
 }
 
-[node name="Label2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1022327534]
 layout_mode = 2
 text = "Search Scheme:"
 
-[node name="Search Scheme" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Search Scheme" type="CodeEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1769932745]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
@@ -572,11 +573,11 @@ auto_brace_completion_pairs = {
 "{": "}"
 }
 
-[node name="HBoxContainer10" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer10" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2007811246]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Help" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10"]
+[node name="Help" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=847162053]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 2
@@ -587,7 +588,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_fptsi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6kvsw")
 text = "?"
 
-[node name="Update UI" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10"]
+[node name="Update UI" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=1157310441]
 custom_minimum_size = Vector2(90, 32)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -598,7 +599,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_6jyyh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wqrrm")
 text = "Update UI"
 
-[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer"]
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer" unique_id=1687707334]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = ExtResource("5_6dtj7")
@@ -608,25 +609,25 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_axfig")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2m6hl")
 text = "Search And Sort"
 
-[node name="Help Menu" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer"]
+[node name="Help Menu" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer" unique_id=2129220754]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_l1vfy")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu" unique_id=321493556]
 layout_mode = 2
 theme_override_constants/separation = 7
 
-[node name="Titlebar" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer"]
+[node name="Titlebar" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer" unique_id=218912556]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer/Titlebar"]
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer/Titlebar" unique_id=1788342517]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Help Menu"
 
-[node name="Exit" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer/Titlebar"]
+[node name="Exit" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer/Titlebar" unique_id=1982333234]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -637,7 +638,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_hoifj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j0p55")
 text = "X"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/Help Menu/VBoxContainer" unique_id=1432034714]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 14
