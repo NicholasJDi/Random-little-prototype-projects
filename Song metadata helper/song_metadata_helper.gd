@@ -23,10 +23,10 @@ func set_field_values():
 	var characters = "abcdefghijklmnopqrstuvwxyz123456789-.,_ ()[]{}<>~".split("")
 	var id = 0
 	for character in filename_text:
-		id += 1
 		if characters.has(character.to_lower()):
-			if id == 1 and ["-",".","_",",","~"].has(character):
+			if id == 0 and ["-",".","_",",","~"," "].has(character):
 				continue
+			id += 1
 			filenameout += character
 	Filename.text = filenameout
 
@@ -36,7 +36,7 @@ func _on_button_pressed() -> void:
 func format() -> void:
 	var array = []
 	var modifier = "with"
-	match Settings.contributer_style:
+	match Settings.contributor_style:
 		0: modifier = "with"
 		1: modifier = "ft"
 		2: modifier = "feat"
@@ -61,12 +61,12 @@ func format() -> void:
 			else: tempfilename = Settings.artist.split(",")[0].strip_edges() + " - " + Settings.title.strip_edges()
 		1: # Normal
 			if Settings.track_type == 2:
-				tempfilename = combine_with_modifier(Settings.original_artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " [" + combine_with_modifier(Settings.artist.split(","),false,"x") + " " + ("Remix " + combine_with_modifier(Settings.contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges() + "]"
-			else: tempfilename = (combine_with_modifier(Settings.artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " " + combine_with_modifier(Settings.contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges()
+				tempfilename = combine_with_modifier(Settings.original_artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " [" + combine_with_modifier(Settings.artist.split(","),false,"x") + " " + ("Remix " + combine_with_modifier(Settings.contributors.split(","),Settings.put_brackets_around_contributors,modifier)).strip_edges() + "]"
+			else: tempfilename = (combine_with_modifier(Settings.artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " " + combine_with_modifier(Settings.contributors.split(","),Settings.put_brackets_around_contributors,modifier)).strip_edges()
 		2: # Extended
 			if Settings.track_type == 2:
-				tempfilename = (combine_with_modifier(Settings.original_artist.split(","),false,"x") + " " + combine_with_modifier(Settings.original_contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges() + " - " + Settings.title.strip_edges() + " [" + combine_with_modifier(Settings.artist.split(","),false,"x") + " " + ("Remix " + combine_with_modifier(Settings.contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges() + "]"
-			else: tempfilename = (combine_with_modifier(Settings.artist.split(","),false,"x") + " - " + tempalbum + " - " + Settings.title.strip_edges() + " " + combine_with_modifier(Settings.contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges()
+				tempfilename = (combine_with_modifier(Settings.original_artist.split(","),false,"x") + " " + combine_with_modifier(Settings.original_contributors.split(","),Settings.put_brackets_around_contributors,modifier)).strip_edges() + " - " + Settings.title.strip_edges() + " [" + combine_with_modifier(Settings.artist.split(","),false,"x") + " " + ("Remix " + combine_with_modifier(Settings.contributors.split(","),Settings.put_brackets_around_contributors,modifier)).strip_edges() + "]"
+			else: tempfilename = (combine_with_modifier(Settings.artist.split(","),false,"x") + " - " + tempalbum + " - " + Settings.title.strip_edges() + " " + combine_with_modifier(Settings.contributors.split(","),Settings.put_brackets_around_contributors,modifier)).strip_edges()
 	# title
 	match Settings.title_type:
 		0: # Compact
@@ -75,17 +75,17 @@ func format() -> void:
 			else: title_text = Settings.title.strip_edges()
 		1: # Normal
 			if Settings.track_type == 2:
-				title_text = combine_with_modifier(Settings.original_artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " [" + combine_with_modifier(Settings.artist.split(","),false,"x") + " " + ("Remix " + combine_with_modifier(Settings.contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges() + "]"
+				title_text = combine_with_modifier(Settings.original_artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " [" + combine_with_modifier(Settings.artist.split(","),false,"x") + " " + ("Remix " + combine_with_modifier(Settings.contributors.split(","),Settings.put_brackets_around_contributors,modifier)).strip_edges() + "]"
 			else:
 				if Settings.artist_type == 0:
 					array.append_array(Settings.artist.split(","))
 					array.remove_at(0)
-				array.append_array(Settings.contributers.split(","))
-				title_text = (Settings.title.strip_edges() + " " + combine_with_modifier(array,Settings.put_brackets_around_contributers,modifier)).strip_edges()
+				array.append_array(Settings.contributors.split(","))
+				title_text = (Settings.title.strip_edges() + " " + combine_with_modifier(array,Settings.put_brackets_around_contributors,modifier)).strip_edges()
 		2: # Extended
 			if Settings.track_type == 2:
-				title_text = (combine_with_modifier(Settings.original_artist.split(","),false,"x") + " " + combine_with_modifier(Settings.original_contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges() + " - " + Settings.title.strip_edges() + " [" + combine_with_modifier(Settings.artist.split(","),false,"x") + " " + ("Remix " + combine_with_modifier(Settings.contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges() + "]"
-			else: title_text = (combine_with_modifier(Settings.artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " " + combine_with_modifier(Settings.contributers.split(","),Settings.put_brackets_around_contributers,modifier)).strip_edges()
+				title_text = (combine_with_modifier(Settings.original_artist.split(","),false,"x") + " " + combine_with_modifier(Settings.original_contributors.split(","),Settings.put_brackets_around_contributors,modifier)).strip_edges() + " - " + Settings.title.strip_edges() + " [" + combine_with_modifier(Settings.artist.split(","),false,"x") + " " + ("Remix " + combine_with_modifier(Settings.contributors.split(","),Settings.put_brackets_around_contributors,modifier)).strip_edges() + "]"
+			else: title_text = (combine_with_modifier(Settings.artist.split(","),false,"x") + " - " + Settings.title.strip_edges() + " " + combine_with_modifier(Settings.contributors.split(","),Settings.put_brackets_around_contributors,modifier)).strip_edges()
 	# artist
 	array = []
 	match Settings.artist_type:
@@ -93,7 +93,7 @@ func format() -> void:
 		1: array.append_array(Settings.artist.split(","))
 		2: 
 			array.append_array(Settings.artist.split(","))
-			array.append_array(Settings.contributers.split(","))
+			array.append_array(Settings.contributors.split(","))
 	artist_text = combine_with_modifier(array,false,",")
 	if not Settings.keep_spaces_in_filename:
 		tempfilename = tempfilename.replace(" - ","--").replace(" x ","_x_").replace(" ","_")

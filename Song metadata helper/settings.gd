@@ -11,17 +11,17 @@ class_name SongMetadataHelperSettings
 
 @onready var Title: LineEdit = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2/Title
 @onready var Artist: LineEdit = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3/Artist
-@onready var Contributers: LineEdit = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4/Contributers
+@onready var Contributors: LineEdit = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4/Contributors
 @onready var Original_Artist: LineEdit = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5/Original Artist"
-@onready var Original_Contributers: LineEdit = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6/Original Contributers"
+@onready var Original_Contributors: LineEdit = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6/Original Contributors"
 @onready var Album: LineEdit = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer7/Album
 
-@onready var Contributer_Style: OptionButton = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12/Contributer Style"
-@onready var Put_Brackets_Around_Contributers: CheckButton = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11/Put Brackets Around Contributers"
+@onready var Contributor_Style: OptionButton = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12/Contributor Style"
+@onready var Put_Brackets_Around_Contributors: CheckButton = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11/Put Brackets Around Contributors"
 @onready var Keep_Spaces_In_Filename: CheckButton = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer8/Keep Spaces In Filename"
 
 @onready var Original_Artist_box: HBoxContainer = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5"
-@onready var Original_Contributers_box: HBoxContainer = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6"
+@onready var Original_Contributors_box: HBoxContainer = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6"
 @onready var Album_box: HBoxContainer = $"VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer7"
 
 @onready var code_edit: CodeEdit = $"../Output/ScrollContainer/VBoxContainer/CodeEdit"
@@ -38,14 +38,14 @@ var album_type = 0
 
 var title = ""
 var artist = ""
-var contributers = ""
+var contributors = ""
 var original_artist = ""
-var original_contributers = ""
+var original_contributors = ""
 var album = ""
 
-var contributer_style = 0
+var contributor_style = 0
 
-var put_brackets_around_contributers = true
+var put_brackets_around_contributors = true
 var keep_spaces_in_filename = true
 
 
@@ -96,36 +96,36 @@ func _on_track_type_item_selected(index: int) -> void:
 		0:
 			Album_box.hide()
 			Original_Artist_box.hide()
-			Original_Contributers_box.hide()
+			Original_Contributors_box.hide()
 			Album_Type.get_parent().show()
 			Album_Type.set_item_text(0,"Title")
 			Album_Type.set_item_text(1,"Single")
 		1:
 			Album_box.show()
 			Original_Artist_box.hide()
-			Original_Contributers_box.hide()
+			Original_Contributors_box.hide()
 			Album_Type.get_parent().show()
 			Album_Type.set_item_text(0,"Normal")
 			Album_Type.set_item_text(1,"Extended Play (EP)")
 		2:
 			Album_box.hide()
 			Original_Artist_box.show()
-			Original_Contributers_box.show()
+			Original_Contributors_box.show()
 			Album_Type.get_parent().hide()
 	if index == 2:
 		Filename_Type.set_item_text(0,"Compact [original artist1 - title [artist1 Remix]]")
-		Filename_Type.set_item_text(1,"Normal [original artist - title [artist Remix (with contributers)]]")
-		Filename_Type.set_item_text(2,"Extended: [original artist (with original contributers) - title [artist Remix (with contributers)]]")
+		Filename_Type.set_item_text(1,"Normal [original artist - title [artist Remix (with contributors)]]")
+		Filename_Type.set_item_text(2,"Extended: [original artist (with original contributors) - title [artist Remix (with contributors)]]")
 		Title_Type.set_item_text(0,"Compact [title [artist1 Remix]]")
-		Title_Type.set_item_text(1,"Normal [original artist - title [artist Remix (with contributers)]]")
-		Title_Type.set_item_text(2,"Extended: [original artist (with original contributers) - title [artist Remix (with contributers)]")
+		Title_Type.set_item_text(1,"Normal [original artist - title [artist Remix (with contributors)]]")
+		Title_Type.set_item_text(2,"Extended: [original artist (with original contributors) - title [artist Remix (with contributors)]")
 	else:
 		Filename_Type.set_item_text(0,"Compact [artist1 - title]")
-		Filename_Type.set_item_text(1,"Normal [artist - title (with contributers)]")
-		Filename_Type.set_item_text(2,"Extended [artist - album - title (with contributers)]")
+		Filename_Type.set_item_text(1,"Normal [artist - title (with contributors)]")
+		Filename_Type.set_item_text(2,"Extended [artist - album - title (with contributors)]")
 		Title_Type.set_item_text(0,"Compact [title]")
-		Title_Type.set_item_text(1,"Normal [title (with contributers)]")
-		Title_Type.set_item_text(2,"Extended [artist - title (with contributers)]")
+		Title_Type.set_item_text(1,"Normal [title (with contributors)]")
+		Title_Type.set_item_text(2,"Extended [artist - title (with contributors)]")
 
 func _on_title_text_changed(new_text: String) -> void:
 	title = new_text
@@ -133,14 +133,14 @@ func _on_title_text_changed(new_text: String) -> void:
 func _on_artist_text_changed(new_text: String) -> void:
 	artist = new_text
 
-func _on_contributers_text_changed(new_text: String) -> void:
-	contributers = new_text
+func _on_contributors_text_changed(new_text: String) -> void:
+	contributors = new_text
 
 func _on_original_artist_text_changed(new_text: String) -> void:
 	original_artist = new_text
 
-func _on_original_contributers_text_changed(new_text: String) -> void:
-	original_contributers = new_text
+func _on_original_contributors_text_changed(new_text: String) -> void:
+	original_contributors = new_text
 
 func _on_album_text_changed(new_text: String) -> void:
 	album = new_text
@@ -230,14 +230,14 @@ func export() -> void:
 			if !item.is_empty():
 				array.append(item)
 		data_to_send.artist = array
-	# contributers array
-	if !contributers.strip_edges().is_empty():
+	# contributors array
+	if !contributors.strip_edges().is_empty():
 		var array = []
-		for item in contributers.split(","):
+		for item in contributors.split(","):
 			item = item.strip_edges()
 			if !item.is_empty():
 				array.append(item)
-		data_to_send.contributers = array
+		data_to_send.contributors = array
 	if track_type == 2:
 		# original artist array
 		if !original_artist.strip_edges().is_empty():
@@ -247,26 +247,26 @@ func export() -> void:
 				if !item.is_empty():
 					array.append(item)
 			data_to_send.original_artist = array
-		# original contributers array
-		if !original_contributers.strip_edges().is_empty():
+		# original contributors array
+		if !original_contributors.strip_edges().is_empty():
 			var array = []
-			for item in original_contributers.split(","):
+			for item in original_contributors.split(","):
 				item = item.strip_edges()
 				if !item.is_empty():
 					array.append(item)
-			data_to_send.original_contributers = array
-	match contributer_style:
+			data_to_send.original_contributors = array
+	match contributor_style:
 		0:
-			data_to_send.contributer_style = "with"
+			data_to_send.contributor_style = "with"
 		1:
-			data_to_send.contributer_style = "ft"
+			data_to_send.contributor_style = "ft"
 		2:
-			data_to_send.contributer_style = "feat"
+			data_to_send.contributor_style = "feat"
 		3:
-			data_to_send.contributer_style = "x"
+			data_to_send.contributor_style = "x"
 		4:
-			data_to_send.contributer_style = ","
-	data_to_send.brackets_around_contributers = put_brackets_around_contributers
+			data_to_send.contributor_style = ","
+	data_to_send.brackets_around_contributors = put_brackets_around_contributors
 	data_to_send.spaces_in_filename = keep_spaces_in_filename
 	code_edit.text = JSON.stringify(data_to_send, "\t",false)
 
@@ -359,14 +359,14 @@ func _on_import_pressed() -> void:
 			artist = ", ".join(array)
 			Artist.text = artist
 		array = []
-		# contributers array
-		if "contributers" in data_received and typeof(data_received.contributers) == TYPE_ARRAY:
-			for item in data_received.contributers:
+		# contributors array
+		if "contributors" in data_received and typeof(data_received.contributors) == TYPE_ARRAY:
+			for item in data_received.contributors:
 				if typeof(item) == TYPE_STRING:
 					item = item.strip_edges()
 					array.append(item)
-			contributers = ", ".join(array)
-			Contributers.text = contributers
+			contributors = ", ".join(array)
+			Contributors.text = contributors
 		array = []
 		# original artist array
 		if "original_artist" in data_received and typeof(data_received.original_artist) == TYPE_ARRAY:
@@ -377,42 +377,42 @@ func _on_import_pressed() -> void:
 			original_artist = ", ".join(array)
 			Original_Artist.text = original_artist
 		array = []
-		# original contributers array
-		if "original_contributers" in data_received and typeof(data_received.original_contributers) == TYPE_ARRAY:
-			for item in data_received.original_contributers:
+		# original contributors array
+		if "original_contributors" in data_received and typeof(data_received.original_contributors) == TYPE_ARRAY:
+			for item in data_received.original_contributors:
 				if typeof(item) == TYPE_STRING:
 					item = item.strip_edges()
 					array.append(item)
-			original_contributers = ", ".join(array)
-			Original_Contributers.text = original_contributers
+			original_contributors = ", ".join(array)
+			Original_Contributors.text = original_contributors
 		
 		# album
 		if "album" in data_received and typeof(data_received.album) == TYPE_STRING:
 			album = data_received.album.strip_edges()
 			Album.text = album
 		
-		# contributer style
-		if "contributer_style" in data_received and typeof(data_received.contributer_style) == TYPE_STRING:
-			match data_received.contributer_style:
+		# contributor style
+		if "contributor_style" in data_received and typeof(data_received.contributor_style) == TYPE_STRING:
+			match data_received.contributor_style:
 				"with":
-					Contributer_Style.select(0)
-					contributer_style = 0
+					Contributor_Style.select(0)
+					contributor_style = 0
 				"ft":
-					Contributer_Style.select(1)
-					contributer_style = 1
+					Contributor_Style.select(1)
+					contributor_style = 1
 				"feat":
-					Contributer_Style.select(2)
-					contributer_style = 2
+					Contributor_Style.select(2)
+					contributor_style = 2
 				"x":
-					Contributer_Style.select(3)
-					contributer_style = 3
+					Contributor_Style.select(3)
+					contributor_style = 3
 				",":
-					Contributer_Style.select(4)
-					contributer_style = 4
+					Contributor_Style.select(4)
+					contributor_style = 4
 		
-		# contributer brackets
-		if "brackets_around_contributers" in data_received and typeof(data_received.brackets_around_contributers) == TYPE_BOOL:
-			Put_Brackets_Around_Contributers.button_pressed = data_received.brackets_around_contributers
+		# contributor brackets
+		if "brackets_around_contributors" in data_received and typeof(data_received.brackets_around_contributors) == TYPE_BOOL:
+			Put_Brackets_Around_Contributors.button_pressed = data_received.brackets_around_contributors
 		
 		# keep spaces
 		if "spaces_in_filename" in data_received and typeof(data_received.spaces_in_filename) == TYPE_BOOL:
@@ -424,8 +424,8 @@ func _on_import_pressed() -> void:
 		await get_tree().create_timer(1).timeout
 		label.text = "Import/Export"
 
-func _on_put_brackets_around_contributers_toggled(toggled_on: bool) -> void:
-	put_brackets_around_contributers = toggled_on
+func _on_put_brackets_around_contributors_toggled(toggled_on: bool) -> void:
+	put_brackets_around_contributors = toggled_on
 
-func _on_contributer_style_item_selected(index: int) -> void:
-	contributer_style = index
+func _on_contributor_style_item_selected(index: int) -> void:
+	contributor_style = index

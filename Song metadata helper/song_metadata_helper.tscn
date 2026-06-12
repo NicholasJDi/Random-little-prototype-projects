@@ -342,8 +342,8 @@ text = "{
 		\"track\": \"Normal\",
 		\"album\": \"Normal\"
 	},
-	\"contributer_style\": \"with\",
-	\"brackets_around_contributers\": true,
+	\"contributor_style\": \"with\",
+	\"brackets_around_contributors\": true,
 	\"spaces_in_filename\": true
 }"
 highlight_all_occurrences = true
@@ -614,9 +614,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1371818692]
 layout_mode = 2
-text = "Contributers"
+text = "Contributors"
 
-[node name="Contributers" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2095876138]
+[node name="Contributors" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2095876138]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("4_fql3b")
@@ -642,9 +642,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1304319866]
 layout_mode = 2
-text = "Original Contributers"
+text = "Original Contributors"
 
-[node name="Original Contributers" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1009001643]
+[node name="Original Contributors" type="LineEdit" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1009001643]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("4_fql3b")
@@ -668,9 +668,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12" unique_id=773409910]
 layout_mode = 2
-text = "Contributer Style"
+text = "Contributor Style"
 
-[node name="Contributer Style" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12" unique_id=165837782]
+[node name="Contributor Style" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12" unique_id=165837782]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("7_0ruwj")
@@ -701,9 +701,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11" unique_id=204488892]
 layout_mode = 2
-text = "Put Brackets Around Contributers"
+text = "Put Brackets Around Contributors"
 
-[node name="Put Brackets Around Contributers" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11" unique_id=1799033927]
+[node name="Put Brackets Around Contributors" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11" unique_id=1799033927]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u8wsy")
@@ -765,7 +765,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_s30ck")
 text = "Generate Metadata"
 
 [node name="Help Menu" type="PanelContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer" unique_id=881154382]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_5halt")
@@ -814,8 +813,8 @@ The Title Should Be Pretty Much Whatever You Want It To Be, But It Should Kind O
 [/font_size][font_size=16]Artists:[/font_size]
 The Artist Section Should Include Everyone That Directly Worked On The Song.
 [font_size=1]
-[/font_size][font_size=16]Contributers:[/font_size]
-The Contributers Section Should Include Everyone Who Helped With The Song, Like A Voice Actor. (if your not sure if someone worked directly on the song its best to place them in this section)
+[/font_size][font_size=16]Contributors:[/font_size]
+The Contributors Section Should Include Everyone Who Helped With The Song, Like A Voice Actor. (if your not sure if someone worked directly on the song its best to place them in this section)
 [font_size=1]
 [/font_size][font_size=16]Album:[/font_size]
 The Album-name Can be Whatever You Want, If The Track Is A Single The Album Should Be The Same As The Title.
@@ -829,8 +828,8 @@ Remixes Are Kind Of Complicated And Theres Not Really Any Established Format, Bu
 [/font_size][font_size=16]Original Artists:[/font_size]
 The Original Artist Section Should Include Everyone Who Directly Worked on The Original Song.
 [font_size=1]
-[/font_size][font_size=16]Original Contributers:[/font_size]
-The Original Contributers Section Should Include Everyone Who Helped With The Original Song, Like A Voice Actor. (if your not sure if someone worked directly on the original song its best to place them in this section)"
+[/font_size][font_size=16]Original Contributors:[/font_size]
+The Original Contributors Section Should Include Everyone Who Helped With The Original Song, Like A Voice Actor. (if your not sure if someone worked directly on the original song its best to place them in this section)"
 
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Output/ScrollContainer/VBoxContainer/HBoxContainer/Import" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_import_pressed"]
 [connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Preset Options/HBoxContainer/Preset" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_preset_item_selected"]
@@ -841,12 +840,12 @@ The Original Contributers Section Should Include Everyone Who Helped With The Or
 [connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer9/Album Type" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_album_type_item_selected"]
 [connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2/Title" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_title_text_changed"]
 [connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3/Artist" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_artist_text_changed"]
-[connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4/Contributers" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_contributers_text_changed"]
+[connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4/Contributors" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_contributors_text_changed"]
 [connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5/Original Artist" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_original_artist_text_changed"]
-[connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6/Original Contributers" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_original_contributers_text_changed"]
+[connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6/Original Contributors" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_original_contributors_text_changed"]
 [connection signal="text_changed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer7/Album" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_album_text_changed"]
-[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12/Contributer Style" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_contributer_style_item_selected"]
-[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11/Put Brackets Around Contributers" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_put_brackets_around_contributers_toggled"]
+[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12/Contributor Style" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_contributor_style_item_selected"]
+[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11/Put Brackets Around Contributors" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_put_brackets_around_contributors_toggled"]
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer8/Keep Spaces In Filename" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_keep_spaces_in_filename_toggled"]
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10/Export" to="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HSplitContainer/Settings" method="_on_export_pressed"]

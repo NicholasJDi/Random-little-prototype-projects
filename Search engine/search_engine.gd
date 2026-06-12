@@ -40,7 +40,7 @@ func _on_button_pressed() -> void:
 		if error == OK:
 			var data_received2 = json.data
 			var data_to_send = []
-			data_to_send = sort_data_by_search(data_received2,data_received,search.text, true)
+			data_to_send = sort_data_by_search_tags(data_received2,data_received,search.text, true)
 			if sort_type.get_selected_id() != 0:
 				json = JSON.new()
 				error = json.parse(sort_scheme_edit.text)
@@ -61,18 +61,47 @@ func _on_button_pressed() -> void:
 		await get_tree().create_timer(1).timeout
 		label_2.text = "Search Scheme:"
 
-func sort_data_by_search(data : Array, search_scheme : Dictionary, input_text : String = "", include_weight : bool = false) -> Array:
-	if input_text == "":
+func sort_data_by_search_tags(data : Array, search_scheme : Dictionary, input_text : String = "", include_weight : bool = false) -> Array:
+	var tags : Dictionary[String,Array]
+	var regex := RegEx.new()
+	regex.compile('(?:"([^"]+)"|([^\\s:]+)):(?:"([^"]+)"|([^\\s]+))')
+	var matches = regex.search_all(input_text)
+	for match in matches:
+		var key = match.get_string(1)
+		if key.is_empty():
+			key = match.get_string(2)
+		var value = match.get_string(3)
+		if value.is_empty():
+			value = match.get_string(4)
+		if not tags.has(key):
+			tags[key] = []
+		tags[key].append(value)
+	var cleaned_text = input_text
+	for i in range(matches.size() - 1, -1, -1):
+		var match = matches[i]
+		cleaned_text = cleaned_text.substr(0, match.get_start()) + cleaned_text.substr(match.get_end())
+	cleaned_text = " ".join(cleaned_text.split(" ", false))
+	return sort_data_by_search(data, search_scheme, cleaned_text, tags, include_weight)
+
+func sort_data_by_search(data : Array, search_scheme : Dictionary, input_text : String = "", input_tags : Dictionary[String,Array] = {}, include_weight : bool = false) -> Array:
+	if input_text == "" and input_tags.is_empty():
 		return data
 	else:
+		data = data.duplicate()
 		data.reverse()
 		var outData = []
 		var index = []
 		for i in data.size():
 			index.append(0)
-		var input_tokens = input_text.to_lower().split(" ",false)
+		var tokens = input_text.to_lower().split(" ",false)
 		var i = 0
 		for key in search_scheme.keys():
+			var input_tokens = tokens.duplicate()
+			for tag in input_tags.get(key,[]):
+				if typeof(tag) == TYPE_ARRAY:
+					input_tokens.append_array(tag)
+				else:
+					input_tokens.append_array(tag.to_lower().split(" ",false))
 			i = 0
 			var search_item = search_scheme[key]
 			for item in data:
@@ -93,13 +122,21 @@ func sort_data_by_search(data : Array, search_scheme : Dictionary, input_text : 
 									if search_token.contains(token):
 										success = true
 										total_weight += token_weight
-										total_weight += position_weight * (input_tokens.size() - input_tokens.find(token))
+										if tokens.has(token):
+											total_weight += position_weight * (tokens.size() - tokens.find(token))
+									elif token.contains(search_token):
+										success = true
+										var ratio = float(search_token.length()) / token.length()
+										total_weight += token_weight * ratio
+										if tokens.has(token):
+											total_weight += (position_weight * (tokens.size() - tokens.find(token))) * ratio
 						"exact":
 							for token : String in input_tokens:
 								if value.has(token):
 									success = true
 									total_weight += token_weight
-									total_weight += position_weight * (input_tokens.size() - input_tokens.find(token))
+									if tokens.has(token):
+										total_weight += position_weight * (tokens.size() - tokens.find(token))
 						"range":
 							for token : String in input_tokens:
 								var parts = token.split("|")
@@ -110,7 +147,8 @@ func sort_data_by_search(data : Array, search_scheme : Dictionary, input_text : 
 										if parts[0] <= search_token and search_token <= parts[1]:
 											success = true
 											total_weight += token_weight
-											total_weight += position_weight * (input_tokens.size() - input_tokens.find(token))
+											if tokens.has(token):
+												total_weight += position_weight * (tokens.size() - tokens.find(token))
 					if success:
 						total_weight += weight
 					index[i] += total_weight
@@ -157,7 +195,7 @@ func sort_data(data : Array, sort_mode : Dictionary) -> Array:
 					new_groups.append(g)
 				"order":
 					var buckets = {}
-					var order = rule.order
+					var order = rule.order.duplicate()
 					if bool(rule.get("reverse", false)):
 						order.reverse()
 					for bucket in order:
