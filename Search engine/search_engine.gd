@@ -114,6 +114,7 @@ func sort_data_by_search(data : Array, search_scheme : Dictionary, input_text : 
 					var weight = float(search_item.get("weight",1))
 					var token_weight = float(search_item.get("token_weight",0))
 					var position_weight = float(search_item.get("position_weight",0))
+					var reversed_weight_multiplier = float(search_item.get("reversed_weight_multiplier", 0.5))
 					var total_weight = 0
 					match search_item.type:
 						"contains":
@@ -125,11 +126,11 @@ func sort_data_by_search(data : Array, search_scheme : Dictionary, input_text : 
 										if tokens.has(token):
 											total_weight += position_weight * (tokens.size() - tokens.find(token))
 									elif token.contains(search_token):
-										success = true
+										success = null
 										var ratio = float(search_token.length()) / token.length()
-										total_weight += token_weight * ratio
+										total_weight += token_weight * reversed_weight_multiplier * ratio
 										if tokens.has(token):
-											total_weight += (position_weight * (tokens.size() - tokens.find(token))) * ratio
+											total_weight += (position_weight * (tokens.size() - tokens.find(token))) * reversed_weight_multiplier * ratio
 						"exact":
 							for token : String in input_tokens:
 								if value.has(token):
@@ -149,8 +150,10 @@ func sort_data_by_search(data : Array, search_scheme : Dictionary, input_text : 
 											total_weight += token_weight
 											if tokens.has(token):
 												total_weight += position_weight * (tokens.size() - tokens.find(token))
-					if success:
+					if success == true:
 						total_weight += weight
+					elif success == null:
+						total_weight += weight * reversed_weight_multiplier
 					index[i] += total_weight
 				i += 1
 		i = 0
